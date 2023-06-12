@@ -12,7 +12,7 @@ require (
 	github.com/rs/zerolog v1.26.1
 	github.com/stackus/errors v0.1.5
 	github.com/v8tix/eda v1.0.7
-	github.com/v8tix/mallbots-depot-proto v1.0.0
+	github.com/v8tix/mallbots-depot-proto v1.0.1
 	github.com/v8tix/mallbots-stores-proto v1.0.7
 	golang.org/x/sync v0.1.0
 	google.golang.org/grpc v1.53.0
