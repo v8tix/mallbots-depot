@@ -2,6 +2,7 @@ package grpc
 
 import (
 	"context"
+	"fmt"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -17,14 +18,14 @@ func Dial(ctx context.Context, endpoint string) (conn *grpc.ClientConn, err erro
 	defer func() {
 		if err != nil {
 			if err = conn.Close(); err != nil {
-				// TODO do something when logging is a thing
+				fmt.Println(fmt.Errorf("%s", err))
 			}
 			return
 		}
 		go func() {
 			<-ctx.Done()
 			if err = conn.Close(); err != nil {
-				// TODO do something when logging is a thing
+				fmt.Println(fmt.Errorf("%s", err))
 			}
 		}()
 	}()
